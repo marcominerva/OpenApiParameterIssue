@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -42,7 +41,7 @@ if (app.Environment.IsDevelopment())
     _ = app.UseSwaggerUI();
 }
 
-app.MapPost("/api/sample/{id:guid}", (string id, [FromHeader] int number, bool boolean, Input input) =>
+app.MapPost("/api/sample/{id}", (string id, bool boolean, Input input) =>
 {
     return TypedResults.Ok();
 })
